@@ -4,7 +4,7 @@ const format = require('date-format')
 const express= require('express')
 const app = express()
 
-const PORT = 4000 || process.env.PORT
+const PORT = process.env.PORT || 4000 ;
 
 
 //get request basic (for home directory)
@@ -53,7 +53,6 @@ app.get('/api/v1/LinkedIn', (req , res) => {
 //for the default url
 app.get("/api/v1/:token",(req , res)=>
 {
-    console.log(req.params.token);
     res.status(200).send( ` parameter is ${req.params.token}`);
 });
 
